@@ -5,6 +5,8 @@ const {
     reset
 } = require('nodemon');
 
+const PORT = process.env.PORT || 8000;
+
 const app = express();
 
 app.use(express.static(__dirname + "/public"));
@@ -53,7 +55,6 @@ app.post('/getFiles', (req, res) => {
     });
 })
 
-
-app.listen(3000, () => {
-    console.log('server started on port 3000')
+app.listen(PORT, () => {
+    console.log('server started on port ' + PORT)
 });
