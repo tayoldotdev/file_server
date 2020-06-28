@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css" crossorigin="anonymous">
+  <title>Local File Server</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="folder-u">
+      <div class="title">
+        <h1>Upload Files:</h1>
+      </div>
+      <div class="core">
+        <form ref='uploadForm' encType="multipart/form-data" class="main" action="/upload" method="post">
+          <input type="text" name="fileName" value="" style="visibility: hidden;"><br>
+          <input type="file" name="foo" value=""><br>
+          <input type="submit" name="" value="upload!">
+        </form>
+        <input type="submit" onclick="getFiles()" name="" value="refresh">
+        <h2 class="ftu">Files to upload:
+          <ol></ol>
+        </h2>
+      </div>
+    </div>
+    <div class="folder" id="f1">
+      <div class="title">
+        <h1>Files on the server:</h1>
+      </div>
+      <div class="core" id="f1core">
+
+      </div>
+    </div>
+  </div>
+  <script>
+    let main = document.getElementsByClassName("main")[0]
+    let uploadedFiles = document.getElementById('f1');
+    let uploadedFilesDir = document.getElementById('f1core');
+    let file = document.getElementsByName("foo")[0]
+    let fn = document.getElementsByName("fileName")[0];
+  </script>
+  <script src="retrieve.js"></script>
+  <script src="upload.js"></script>
+  <script src="core.js"></script>
+</body>
+
+</html>
