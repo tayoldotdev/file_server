@@ -47,8 +47,6 @@ app.post('/removeFile', async (req, res) => {
 
 app.post('/getFiles', (req, res) => {
     fs.readdir('./images', function (err, items) {
-        console.log(items);
-
         res.json({
             res: items
         })
